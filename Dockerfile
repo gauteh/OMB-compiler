@@ -30,3 +30,7 @@ WORKDIR /work
 
 RUN git clone https://github.com/jerabaul29/OpenMetBuoy-v2021a.git
 
+WORKDIR /work/OpenMetBuoy-v2021a/legacy_firmware/firmware/steval_gps_waves_drifter
+RUN mv tracker.ino steval_gps_waves_drifter.ino
+RUN arduino-cli compile -b SparkFun:apollo3:sfe_artemis_atp .
+
